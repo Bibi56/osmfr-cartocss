@@ -17,7 +17,17 @@
       point-placement: interior;
       [indoor='yes'] { point-opacity: 0.5; }
     }
-
+    [amenity = 'post_office'][zoom >= 16][operator='Algérie Poste'],
+    [amenity = 'post_office'][zoom >= 16][ref_algerieposte!=''] {
+      [poi_type =~ '(post_annex|post_partner)'] {
+        point-file: url('symbols/fr/AlgeriePoste-gris.png');
+      }
+      point-file: url('symbols/fr/AlgeriePoste.png');
+      point-transform: "scale(0.5)";
+      // point-file: url('symbols/post_office_yellow.svg');
+      point-placement: interior;
+      [indoor='yes'] { point-opacity: 0.5; }
+    }
     [amenity = 'post_office'][zoom >= 16][operator='bpost'] {
       [indoor='yes'] { point-opacity: 0.5; }
       point-file: url('symbols/fr/logo_bpost.png');
